@@ -1,0 +1,11 @@
+{
+  "login": {
+    "welcomeBack": "Bem vindo de volta!",
+    "hello": "Olá",
+    "login": "Entrar",
+    "forgotPassword": "Esqueceu sua senha?",
+    "or": "Ou",
+    "google": "Entrar com o Google",
+    "dontHaveAccount": "Não tem uma conta? <b>Registre-se</b>"
+  }
+}

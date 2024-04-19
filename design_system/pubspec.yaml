@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   global_configs: ^1.1.2
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +24,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - lib/src/0_core/theme/light.json
 
 # To add assets to your package, add an assets section, like this:
 # assets:

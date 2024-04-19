@@ -8,6 +8,10 @@
       "value": "#06132D",
       "type": "color"
     },
+    "blue": {
+      "value": "#255CE7",
+      "type": "color"
+    },
     "clayBlue": {
       "value": "#1E2A43",
       "type": "color"
@@ -34,6 +38,10 @@
     },
     "lightBlue": {
       "value": "#ACB5D3",
+      "type": "color"
+    },
+    "pint": {
+      "value": "#F54584",
       "type": "color"
     }
   },

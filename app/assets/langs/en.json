@@ -1,0 +1,11 @@
+{
+  "login": {
+    "welcomeBack": "Welcome back!",
+    "hello": "Hello",
+    "login": "Login",
+    "forgotPassword": "Forgot password?",
+    "or": "Or",
+    "google": "Sign with Google",
+    "dontHaveAccount": "Don't have an account? <b>Sign</b>"
+  }
+}

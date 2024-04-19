@@ -10,6 +10,10 @@ class RColors {
     return _getColorFromField('midnightBlue');
   }
 
+  static Color getBlue() {
+    return _getColorFromField('blue');
+  }
+
   static Color getClayBlue() {
     return _getColorFromField('clayBlue');
   }
@@ -36,6 +40,10 @@ class RColors {
 
   static Color getLightBlue() {
     return _getColorFromField('lightBlue');
+  }
+
+  static Color getPink() {
+    return _getColorFromField('pink');
   }
 
   static Color _getColorFromField(String field) {
