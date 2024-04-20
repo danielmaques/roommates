@@ -26,7 +26,7 @@ class RButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: isDisabled || isLoad ? null : onTap,
+      onTap: isLoad ? null : onTap,
       borderRadius: BorderRadius.circular(15),
       child: Ink(
         height: 50,

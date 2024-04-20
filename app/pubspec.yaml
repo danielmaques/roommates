@@ -11,15 +11,22 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  firebase_core: ^2.30.0
 
   design_system:
     path: ../design_system
 
   iconsax: ^0.0.8
   google_fonts: ^6.2.1
-  flutter_modular: ^6.3.3
   flutter_svg: ^2.0.10+1
   flutter_html: ^3.0.0-beta.2
+
+  flutter_bloc: ^8.1.5
+  flutter_modular: ^6.3.3
+  equatable: ^2.0.5
+
+  firebase_auth: ^4.19.2
+  cloud_firestore: ^4.17.0
 
 dev_dependencies:
   flutter_test:

@@ -8,10 +8,16 @@ class RTextFormField extends StatefulWidget {
     super.key,
     this.prefixIcon,
     this.hintText,
+    this.onChanged,
+    this.validator,
+    required this.controller,
   });
 
   final Icon? prefixIcon;
   final String? hintText;
+  final Function(String)? onChanged;
+  final String? Function(String?)? validator;
+  final TextEditingController controller;
 
   @override
   State<RTextFormField> createState() => _RTextFormFieldState();
@@ -58,6 +64,12 @@ class _RTextFormFieldState extends State<RTextFormField> {
           fillColor: RColors.getAliceBlue(),
           filled: true,
         ),
+        onChanged: (value) {
+          _formKey.currentState?.validate();
+          widget.onChanged;
+        },
+        validator: widget.validator,
+        controller: widget.controller,
       ),
     );
   }
