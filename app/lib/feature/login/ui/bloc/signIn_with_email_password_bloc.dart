@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/states/base_page_state.dart';
@@ -30,14 +29,6 @@ class SignInWithEmailPasswordBlocImpl extends SignInWithEmailPasswordBloc {
         email: email,
         password: password,
       );
-
-      CollectionReference usersCollection =
-          FirebaseFirestore.instance.collection('users');
-
-      await usersCollection.doc(result.getSuccessData).set({
-        'createdAt': FieldValue.serverTimestamp(),
-        'email': email,
-      });
 
       emit(SuccessState(result.getSuccessData));
     } catch (e) {

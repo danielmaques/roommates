@@ -60,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
               controller: emailController,
               hintText: 'Email',
               prefixIcon: const Icon(Iconsax.sms),
+              keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
                 setState(() {
                   _validateCanSend();
@@ -77,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
               controller: passwordController,
               hintText: 'Password',
               prefixIcon: const Icon(Iconsax.lock),
+              isPassword: true,
               onChanged: (value) {
                 setState(() {
                   _validateCanSend();
@@ -138,7 +140,9 @@ class _LoginPageState extends State<LoginPage> {
               text: context.translate(login, 'dontHaveAccount'),
               backgroundColor: RColors.getWhite(),
               textColor: RColors.getMidnightBlue(),
-              onTap: () {},
+              onTap: () {
+                Modular.to.pushNamed('/create');
+              },
             ),
           ],
         ),

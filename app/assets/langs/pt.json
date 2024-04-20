@@ -6,6 +6,15 @@
     "forgotPassword": "Esqueceu sua senha?",
     "or": "Ou",
     "google": "Entrar com o Google",
-    "dontHaveAccount": "Não tem uma conta? <b>Registre-se</b>"
+    "dontHaveAccount": "Não tem uma conta? <b>Registre-se</b>",
+    "createAccount": "Criar conta",
+    "terms": "Ao criar conta, você concorda com nossos \n<b>Termos de Serviço</b> e <b>Política de Privacidade</b>."
+  },
+  "validator": {
+    "email": "Email inválido",
+    "name": "Nome inválido",
+    "password": "Senha inválida",
+    "required": "Campo obrigatório",
+    "passwordMatch": "As senhas não coincidem"
   }
 }

@@ -1,24 +1,25 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:roommate/core/errors/base_error.dart';
-import 'package:roommate/core/result_wrapper/result_wrapper.dart';
 
-abstract class SignInWithEmailAndPasswordFirebase {
-  Future<Result> signInWithEmailAndPassword({
+import '../../../core/errors/base_error.dart';
+import '../../../core/result_wrapper/result_wrapper.dart';
+
+abstract class CreateUserWithEmailAndPasswordFirebase {
+  Future<Result> createUserWithEmailAndPassword({
     required String email,
     required String password,
   });
 }
 
-class SignInWithEmailAndPasswordFirebaseImpl
-    implements SignInWithEmailAndPasswordFirebase {
+class CreateUserWithEmailAndPasswordFirebaseImpl
+    implements CreateUserWithEmailAndPasswordFirebase {
   @override
-  Future<Result> signInWithEmailAndPassword({
+  Future<Result> createUserWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );

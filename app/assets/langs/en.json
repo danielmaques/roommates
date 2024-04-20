@@ -6,6 +6,8 @@
     "forgotPassword": "Forgot password?",
     "or": "Or",
     "google": "Sign with Google",
-    "dontHaveAccount": "Don't have an account? <b>Sign</b>"
+    "dontHaveAccount": "Don't have an account? <b>Sign</b>",
+    "createAccount": "Create account",
+    "terms": "By signing up, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b>."
   }
 }
