@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:roommate/core/helper/context_extension.dart';
 import 'package:roommate/core/states/base_page_state.dart';
+import 'package:roommate/feature/login/ui/bloc/google_sign_in_bloc.dart';
 import 'package:roommate/feature/login/ui/bloc/signIn_with_email_password_bloc.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   late SignInWithEmailPasswordBloc emailPasswordBloc;
+  late GoogleSignInBloc googleSignInBloc;
 
   final String login = 'login';
   final canSend = ValueNotifier(false);
@@ -28,6 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     emailPasswordBloc = Modular.get();
+    googleSignInBloc = Modular.get();
   }
 
   @override
@@ -133,7 +136,9 @@ class _LoginPageState extends State<LoginPage> {
               text: context.translate(login, 'google'),
               icon: 'assets/icons/google.svg',
               backgroundColor: RColors.getWhite(),
-              onTap: () {},
+              onTap: () {
+                googleSignInBloc.googleSignIn();
+              },
             ),
             20.h,
             RButton(

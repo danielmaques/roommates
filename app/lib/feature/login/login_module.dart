@@ -1,6 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:roommate/feature/login/firebase/google_sign_in.dart';
 import 'package:roommate/feature/login/firebase/signIn_with_email_password.dart';
 import 'package:roommate/feature/login/ui/bloc/create_user_email_password_bloc.dart';
+import 'package:roommate/feature/login/ui/bloc/google_sign_in_bloc.dart';
 import 'package:roommate/feature/login/ui/bloc/signIn_with_email_password_bloc.dart';
 import 'package:roommate/feature/login/ui/create/create_page.dart';
 import 'package:roommate/feature/login/ui/login/login_page.dart';
@@ -24,6 +26,10 @@ class LoginModule extends Module {
         CreateUserWithEmailAndPasswordFirebaseImpl.new);
     i.addLazySingleton<CreateUserWithEmailAndPasswordBloc>(
         CreateUserWithEmailAndPasswordBlocImpl.new);
+
+    /// Google
+    i.addLazySingleton<GoogleSignInFirebase>(GoogleSignInFirebaseImpl.new);
+    i.addLazySingleton<GoogleSignInBloc>(GoogleSignInBlocImpl.new);
   }
 
   @override

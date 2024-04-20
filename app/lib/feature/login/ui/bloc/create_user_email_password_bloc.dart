@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/states/base_page_state.dart';
 import '../../firebase/create_user_email_password.dart';
@@ -41,6 +42,9 @@ class CreateUserWithEmailAndPasswordBlocImpl
         'name': name,
         'email': email,
       });
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setString('uid', result.getSuccessData);
 
       emit(SuccessState(result.getSuccessData));
     } catch (e) {
