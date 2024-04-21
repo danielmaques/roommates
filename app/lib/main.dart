@@ -8,6 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:roommate/firebase_options.dart';
 
 import 'core/helper/custom_localization/custom_localization.dart';
+import 'feature/home/home_module.dart';
 import 'feature/login/login_module.dart';
 
 void main() async {
@@ -54,5 +55,6 @@ class AppModule extends Module {
   @override
   void routes(r) {
     r.module('/', module: LoginModule());
+    r.module('/home', module: HomeModule());
   }
 }
