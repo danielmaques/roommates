@@ -99,7 +99,9 @@ class _LoginPageState extends State<LoginPage> {
               text: context.translate(login, 'forgotPassword'),
               textColor: RColors.getMidnightBlue(),
               backgroundColor: RColors.getWhite(),
-              onTap: () {},
+              onTap: () {
+                Modular.to.pushNamed('/recover_password');
+              },
             ),
             20.h,
             BlocBuilder(

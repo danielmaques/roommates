@@ -90,13 +90,6 @@ class _CreatePageState extends State<CreatePage> {
               },
             ),
             20.h,
-            RButton(
-              text: context.translate(login, 'forgotPassword'),
-              textColor: RColors.getMidnightBlue(),
-              backgroundColor: RColors.getWhite(),
-              onTap: () {},
-            ),
-            20.h,
             BlocBuilder(
               bloc: createUserWithEmailAndPasswordBloc,
               builder: (context, state) {

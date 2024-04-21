@@ -8,7 +8,10 @@
     "google": "Entrar com o Google",
     "dontHaveAccount": "Não tem uma conta? <b>Registre-se</b>",
     "createAccount": "Criar conta",
-    "terms": "Ao criar conta, você concorda com nossos \n<b>Termos de Serviço</b> e <b>Política de Privacidade</b>."
+    "terms": "Ao criar conta, você concorda com nossos \n<b>Termos de Serviço</b> e <b>Política de Privacidade</b>.",
+    "forrgotPassword": "Esqueceu sua senha?",
+    "recoverPassword": "Recuperar senha",
+    "recoverPasswordDescription": "Digite seu email para recuperar sua senha"
   },
   "validator": {
     "email": "Email inválido",

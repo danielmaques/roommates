@@ -87,7 +87,7 @@ class _RTextFormFieldState extends State<RTextFormField> {
         ),
         onChanged: (value) {
           _formKey.currentState?.validate();
-          widget.onChanged;
+          widget.onChanged!(value);
         },
         validator: widget.validator,
         controller: widget.controller,
