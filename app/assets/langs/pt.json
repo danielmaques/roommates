@@ -13,11 +13,17 @@
     "recoverPassword": "Recuperar senha",
     "recoverPasswordDescription": "Digite seu email para recuperar sua senha"
   },
+  "home": {
+    "hello": "Olá"
+  },
   "validator": {
     "email": "Email inválido",
     "name": "Nome inválido",
     "password": "Senha inválida",
     "required": "Campo obrigatório",
     "passwordMatch": "As senhas não coincidem"
+  },
+  "errors": {
+    "userOrPasswordInvalid": "Usuário ou senha inválidos"
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/states/base_page_state.dart';
 import '../../firebase/signIn_with_email_password.dart';
@@ -31,8 +30,10 @@ class SignInWithEmailPasswordBlocImpl extends SignInWithEmailPasswordBloc {
         password: password,
       );
 
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString('uid', result.getSuccessData);
+      // SharedPreferences prefs = await SharedPreferences.getInstance();
+      // if (result.getSuccessData != null) {
+      //   await prefs.setString('uid', result.getSuccessData.toString());
+      // }
 
       emit(SuccessState(result.getSuccessData));
     } catch (e) {

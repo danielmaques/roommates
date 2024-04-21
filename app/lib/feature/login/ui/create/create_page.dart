@@ -90,27 +90,35 @@ class _CreatePageState extends State<CreatePage> {
               },
             ),
             20.h,
-            BlocBuilder(
+            BlocListener(
               bloc: createUserWithEmailAndPasswordBloc,
-              builder: (context, state) {
-                return ValueListenableBuilder(
-                  valueListenable: canSend,
-                  builder: (context, value, child) {
-                    return RButton(
-                      text: context.translate(login, 'createAccount'),
-                      isLoad: state is LoadingState,
-                      onTap: () {
-                        createUserWithEmailAndPasswordBloc
-                            .createUserWithEmailAndPassword(
-                          name: nameController.text,
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
-                      },
-                    );
-                  },
-                );
+              listener: (context, state) {
+                if (state is SuccessState) {
+                  Modular.to.navigate('/home/');
+                }
               },
+              child: BlocBuilder(
+                bloc: createUserWithEmailAndPasswordBloc,
+                builder: (context, state) {
+                  return ValueListenableBuilder(
+                    valueListenable: canSend,
+                    builder: (context, value, child) {
+                      return RButton(
+                        text: context.translate(login, 'createAccount'),
+                        isLoad: state is LoadingState,
+                        onTap: () {
+                          createUserWithEmailAndPasswordBloc
+                              .createUserWithEmailAndPassword(
+                            name: nameController.text,
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
+              ),
             ),
             20.h,
             Center(

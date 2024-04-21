@@ -104,25 +104,42 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
             20.h,
-            BlocBuilder(
+            BlocListener(
               bloc: emailPasswordBloc,
-              builder: (context, state) {
-                return ValueListenableBuilder(
-                  valueListenable: canSend,
-                  builder: (context, value, child) {
-                    return RButton(
-                      text: context.translate(login, 'login'),
-                      isLoad: state is LoadingState,
-                      onTap: () {
-                        emailPasswordBloc.signInWithEmailPassword(
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
-                      },
-                    );
-                  },
-                );
+              listener: (context, state) {
+                if (state is SuccessState) {
+                  Modular.to.pushNamed('/home/');
+                } else if (state is ErrorState) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: Colors.redAccent,
+                      content: Text(
+                          context.translate('errors', 'userOrPasswordInvalid')),
+                    ),
+                  );
+                }
               },
+              child: BlocBuilder(
+                bloc: emailPasswordBloc,
+                builder: (context, state) {
+                  return ValueListenableBuilder(
+                    valueListenable: canSend,
+                    builder: (context, value, child) {
+                      return RButton(
+                        text: context.translate(login, 'login'),
+                        isLoad: state is LoadingState,
+                        isDisabled: !canSend.value,
+                        onTap: () {
+                          emailPasswordBloc.signInWithEmailPassword(
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
+              ),
             ),
             20.h,
             Text(
